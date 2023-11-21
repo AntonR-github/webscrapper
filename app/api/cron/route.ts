@@ -30,7 +30,7 @@ export async function GET() {
                     priceHistory: updatedPriceHistory,
                     lowestPrice: getLowestPrice(updatedPriceHistory),
                     highestPrice: getHighestPrice(updatedPriceHistory),
-                    averagePrice: getAveragePrice(updatedPriceHistory),
+                    averagePrice: getAveragePrice(scrapedProduct.currentPrice, scrapedProduct.originalPrice),
                 }
 
                 const updatedProduct = await Product.findOneAndUpdate(
